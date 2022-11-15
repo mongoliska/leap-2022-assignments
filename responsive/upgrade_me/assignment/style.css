@@ -1,0 +1,35 @@
+body{
+    background-color: rgb(226, 116, 134) ;
+}
+
+
+@media only screen and (max-width: 1400px){
+    body{
+        background-color: rgb(195, 67, 88);
+        
+    }
+}
+
+@media only screen and (max-width: 1200px){
+    body{
+        background-color: pink;
+    }
+}
+
+@media only screen and (max-width: 992px){
+    body{
+        background-color: cyan;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    body{
+        background-color: burlywood
+    }
+}
+
+@media only screen and (max-width: 576px){
+    body{
+        background-color: green
+    }
+}

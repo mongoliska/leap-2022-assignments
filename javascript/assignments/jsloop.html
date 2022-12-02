@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+/*1. 1-100 ийн хооронд random оор 1 утга авдаг randomNumber гэсэн variable зарлана уу.
+2. Prompt ашиглан 1 утга аваад тэр тоог таах хүртэл зогсолтгүй ажиллах loop бичээргэй. 
+3. Хэрвээ prompt - оос авсан утга нь randomNumber оос их бол "таны оруулсан тоо их байна" г.м чиглүүлэх маягаар хэвлэдэг байх.*/
+       
+        let p = Math.floor(Math.random()*100)+1;
+        let r = window.prompt(`number within 100 ${p}`);
+        console.log(p)
+        
+        while(Number(p)!==Number(r)){
+            if (Number(p)===Number(r)){
+                break;
+            }
+        if(p>r){
+            alert('below');
+        }else{alert('above');}
+    
+        r=Number(prompt(`please write down correct number ${p}`))
+        }
+        alert('correct')
+    </script>
+</body>
+</html>

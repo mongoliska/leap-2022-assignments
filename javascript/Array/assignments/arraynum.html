@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1. arrayOfNumbers гэсэн variable зарлаад дараах тоонуудыг оруул. 43, 56, 23, 89, 88, 90, 99, 652, 15, 290, 11
+        //2. Array доторх тоонуудын нийлбэрийг ол.
+        let arrayOfNumbers = [43, 56, 23, 89, 88, 90, 99, 652, 15, 290, 11]
+        let niilber = 0;
+        for(let i = 0; i<arrayOfNumbers.length; i++){
+            niilber+=arrayOfNumbers[i];
+        }
+        console.log(niilber);
+
+        //3. Хамгийн их тоог ол.
+
+        let ihtoo = arrayOfNumbers[0];
+        for(let i = 1; i<arrayOfNumbers.length; i++){
+            if(ihtoo<arrayOfNumbers[i]){
+                ihtoo=arrayOfNumbers[i];
+            }
+        }
+        console.log(ihtoo)
+
+        //4. Хамгийн бага тоог ол.
+
+        let bagatoo = arrayOfNumbers [0];
+        for(let i=1; i<arrayOfNumbers.length; i++){
+            if(bagatoo>arrayOfNumbers[i]){
+                bagatoo=arrayOfNumbers[i];
+            }
+        }
+        console.log(bagatoo)
+
+        //5. Array - ийн эхэнд дурын 1 тоог нэм.
+        for(let i = arrayOfNumbers.length; i>=0; i--){
+            arrayOfNumbers[i] = arrayOfNumbers[i-1];
+        }
+        arrayOfNumbers[0] = 12
+        console.log(arrayOfNumbers.join(','));                
+
+        //6. Array - ийн төгсгөлд дурын 1 тоог нэм.
+        // console.log(arrayOfNumbers); 
+
+        // for(let i = arrayOfNumbers.length; i>=0; i){
+        //     arrayOfNumbers[i+1] = arrayOfNumbers[i];
+        // }
+        arrayOfNumbers[arrayOfNumbers.length]=33
+        console.log(arrayOfNumbers)
+    </script>
+</body>
+</html>

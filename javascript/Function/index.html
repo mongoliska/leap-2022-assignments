@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function pyramid(rowLength){
+            let result = '';
+            for(let i = 1; i<=rowLength; i++){
+                for(let j = 0; j<rowLength-i; j++){
+                    result +=' ';
+                }
+            for(let j = 0; j<i; j++){
+                result +='* ';
+            }
+            result +='\n';
+        }
+        console.log(result);
+        }
+
+        pyramid(20);
+        pyramid(3);
+        pyramid(5);
+
+        //recursive
+        //recursion
+        function add(n){
+            if(n===1){
+                return 1;
+            }
+            return n+add(n-1);
+        }
+
+        function sum (n){
+            let sum =0; 
+            for (let i = 1; i<=n; i++){
+                sum+=1;
+            }
+        }
+    </script>
+
+    <script>
+        // function pn (n){
+        //     let result = true;
+        //     for (let i = 2; i<=Math.floor (n/2); i++){
+        //         if(result && n%i === 0){
+        //             result = false;
+        //             break;
+        //         }
+        //     }
+        // }
+
+
+        // function huis(register){
+
+        //     let h=register.substr(8,1);
+        //     let udur=register.substr(4,2);
+        //     let odd=udur-20;
+
+        //     console.log(h,udur);
+        //     if(h%2 === 1){
+        //         console.log('eregtei');
+        //     }
+        //     else{
+        //         console.log('emegtei');
+        //     }
+        // }
+
+        // function rd (pn)
+        // let onee = register.substr (0,1);
+        // let two = register.substr (1,1);
+        // let on = register.substr ();
+        // let sar = register.substr ();
+        // let udur = register.substr ();
+        // let huis = register.substr ();
+    </script>
+
+    <script>
+        //register
+
+        function getgender (secondlastdigit){
+            if (secondlastdigit % 2 === 0){
+                return 'female';
+            }
+            return 'male';
+        }
+        function isborntwenties (fifthdigit){
+            if (fifthdigit === 3 || fifthdigit === 2)
+            isborntwenties = true;
+            return false;
+        }
+            
+        function getbirthday (rd){
+            const day =rd.substr (6,2);
+            let isborntwenties = isborntwenties (rd[4]);
+            const fifthdigit = rd[4];
+            if (fifthdigit === 3 || fifthdigit === 2)
+            isborntwenties =true;
+
+            let month = Number(rd.substr (4,2));
+            if (isBorntwenties)
+            month = 20;
+
+            let year = rd.substr (2,2);
+            if (isborntwenties){
+                year = 20 + year;
+            }else {
+                year = 19 + year;
+            }
+            year = Number (year);
+
+            return (`${year}-${month}-${day}`);
+        }
+
+        function register (rd){
+            const sex = getgender (Number(rd.substr(8,1)));
+            const birthday = isborntwenties (rd);
+
+            const firstletter = rd.substr (0,1);
+            if (firstletter == 'У'){
+                aimag = 'Ulaanbaatar';
+            }else if (firstLetter == 'А') {
+        aimag = 'Arhangai';
+            }
+            else if (firstLetter == 'Б') {
+                aimag = 'Bayan-Olgii';
+            }
+            else if (firstLetter == 'В') {
+                aimag = 'Bayanhongor';
+            }
+            else if (firstLetter == 'Г') {
+                aimag = 'Bulgan';
+            }
+            else if (firstLetter == 'Д') {
+                aimag = 'Govi-Altai';
+            }
+            else if (firstLetter == 'Е') {
+                aimag = 'Dornogovi';
+            }
+            else if (firstLetter == 'Ж') {
+                aimag = 'Dundgovi';
+            }
+            else if (firstLetter == 'З') {
+                aimag = 'Zavhan';
+            }
+            else if (firstLetter == 'И') {
+                aimag = 'Uvurhangai';
+            }
+            else if (firstLetter == 'Й') {
+                aimag = 'Umnugovi';
+            }
+            else if (firstLetter == 'К') {
+                aimag = 'Sukhbaatar';
+            }
+            else if (firstLetter == 'Л') {
+                aimag = 'Selenge';
+            }
+            else if (firstLetter == 'М') {
+                aimag = 'Tuv';
+            }
+            else if (firstLetter == 'Н') {
+                aimag = 'Uvs';
+            }
+            else if (firstLetter == 'О') {
+                aimag = 'Hovd';
+            }
+            else if (firstLetter == 'П') {
+                aimag = 'Huwsgul';
+            }
+            else if (firstLetter == 'Р ') {
+                aimag = 'Khentii';
+            }
+            else if (firstLetter == 'С ') {
+                aimag = 'Darkhan-Uul';
+            }
+            else if (firstLetter == 'Т') {
+                aimag = 'Orkhon';
+            }
+            else if (firstLetter == 'Ф') {
+                aimag = 'Govisumber';
+            }
+            else if (firstLetter == 'Х') {
+                aimag = 'Ulaanbaatar';
+            }
+            console.log(`${aimag} hot/aimag-t tursun`);
+            console.log('birthday', birthday);
+            console.log('sex', sex);
+        }
+        register ('УШ96103147');
+
+
+    </script>
+
+
+</body>
+</html>

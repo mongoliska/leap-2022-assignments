@@ -9,10 +9,12 @@
 <body>
     <script>
         //reverse a number
-        const array1 = ['4', '5', '3', '6', '1'];
-        console.log ('array1:', array1);
-        const reversed = array1.reverse();
-        console.log('reversed:', reversed);
+        const input = 45361;
+
+        function reverse(data){
+            return data.split ('').reverse().join('');
+        }
+        console.log(reverse(input.toString()));
     </script>
     
 </body>

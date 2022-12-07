@@ -23,27 +23,35 @@
         //1 машины брэндийн эхний үсгээр хайх
 
         function first(brands, letter){
-            const cn = [];
+            const result = [];
             for(let i = 0; i<brands.length; i++){
-                cn.push(brands)[i][0];
-            }
-            console.log(car);
-
-            const result = []
-            for (let i = 0; i<brands.length; i++){
-                if(brands [i] [0].toLowerCase() === letter.toLowerCase()){
+                if(brands[i][0][0].toLowerCase() === letter.toLowerCase()){
                     result.push(brands[i]);
+                };
+            }
+            return result;
+            }
+
+            const search = prompt ("");
+            console.log(first(cb,search));
+
+            //2. машины үйлвэрлэсэн улсаар хайх
+            function first(brands, country){
+                const result = [];
+                for (let i = 0; i < brands.length; i++){
+                    if (brands [i][1].toLowerCase() === country.toLowerCase()){
+                        result.push(brands[i]);
+                    }
                 }
                 return result;
             }
-            const search = prompt('');
-            console.log(first(carBrands, search))
-        }
+            const find = prompt ("");
+            console.log(first(cb, find));
 
-        //2. машины үйлвэрлэсэн улсаар хайх
-        
+            //3. нийт хэдэн ширхэг мөр дата байгаа, хэдэн улсын brand байгааг харуулах
+            let result = `Нийт ${cb.length} мөр дата байна`;
+            console.log(result);
 
-        //3. нийт хэдэн ширхэг мөр дата байгаа, хэдэн улсын brand байгааг харуулах
     </script>
 </body>
 </html>

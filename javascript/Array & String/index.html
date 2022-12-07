@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //1. Input - ээр авсан утгыг palindromic гэдэгийг шалгадаг function бич. (loop хэрэглэхгүй method хэрэглээрэй)
+
+        //let = input === input split (), reverse (), join ();
+        const input = prompt ('insert your input');
+        function ispalindromic(data){
+            return data === data.split('').reverse('').join('');
+        }
+        console.log(ispalindromic(input));
+    </script>
+
+    <script>
+
+        // 1. Банканд хүмүүс оочирлож байв. Хаах цаг дөхиж оочирт байгаа эхний 10 хүнийг аваад хаахаар болов. Гэтэл хаанаас ч юм 2 эгч (эгч1, эгч2) Гончигсумлай - д оочир захьсан байсан гэж дайрж орж ирээд зогсчихлоо. 
+        // 2. Банкнаас амжиж үйлчилгээ авах хүмүүсийн array - ийг 10 хүнтэй array болгоорой.
+        // queueLine = [ "Бат", "Дорж", "Пунцаг", "Готов", "Баяраа", "Болд", "Навчаа", "Гончигсумлай", "Цэцгээ", "Нэргүй", "Бальбийгомбо", "Баатар", "Сүхээ" ]
+       
+
+        const arr = [ "Бат", "Дорж", "Пунцаг", "Готов", "Баяраа", "Болд", "Навчаа", "Гончигсумлай", "Цэцгээ", "Нэргүй", "Бальбийгомбо", "Баатар", "Сүхээ" ]
+        console.log(arr.indexOf("Гончигсумлай"));
+        
+        arr.splice(8, 0, 'egch1', 'egch2');
+        console.log(arr);
+
+        console.log(arr.slice(0,10));
+    </script>
+
+    <script>
+        //array - аас тодорхой элементийг устгах функц бичнэ үү (7-g hasav)
+        const too = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+        too.splice(too.indexOf('7'),1);
+        console.log(too);
+
+    </script>
+
+    <script>
+        //үгнүүдийн дундуур зураас оруулаx функц бичнэ үү
+
+        const willbe = ['I', 'will', 'be', 'there', 'for', 'you'];
+        console.log(willbe.join('-'));
+    </script>
+
+    <script>
+        //reverse a number
+        const array1 = ['4', '5', '3', '6', '1'];
+        console.log ('array1:', array1);
+        const reversed = array1.reverse();
+        console.log('reversed:', reversed);
+    </script>
+
+    <script>
+        //In the following shopping cart add, remove, edit items
+        //add 'Meat' in the beginning of your shopping cart if it has not been already added
+        const shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey']
+        shoppingCart.splice(0, 0, 'Meat');
+        console.log(shoppingCart);
+
+        //add Sugar at the end of you shopping cart if it has not been already added
+
+        shoppingCart.push('Sugar');
+        console.log(shoppingCart);
+
+        //remove 'Honey' if you are allergic to honey
+
+        shoppingCart.splice(shoppingCart.indexOf('Honey'),1);
+        console.log(shoppingCart);
+
+        //modify Tea to 'Green Tea'
+        const a = 'Milk, Coffee, Tea, Honey';
+        console.log(a.replace ('Tea', 'Green Tea'));
+
+
+    </script>
+
+    <script>
+        const social = [ "Facebook", "Google", "Microsoft", "Apple", "IBM", "Oracle", "Amazon" ] 
+        
+        //Sort the array using  method
+        social.sort();
+        console.log(social);
+
+        //Reverse the array using  method
+        console.log ('social:', social);
+        
+        const rvrsd = social.reverse();
+        console.log ('rvrsd:', rvrsd);
+
+        //Remove the first IT company from the array
+        const one = social.shift();
+        console.log(social);
+        console.log(one);
+
+        //Remove the middle IT company or companies from the array
+        social.splice(social.indexOf('Facebook'),1);
+        console.log(social);
+
+        //Remove the last IT company from the array
+        const ppd = social.pop();
+        console.log(ppd);
+        console.log(social);
+
+        //Remove all IT companies
+        social.splice(0,4);
+        console.log(social);
+    </script>
+
+        <script>
+            const cb = [
+            ["Aston Martin Lagonda Ltd", "UK", 2016],
+            ["Audi", "Germany", 2016],
+            ["BMW", "Germany", 2016],
+            ["Chevrolet", "USA", 2016],
+            ["Dodge", "USA", 2016],
+            ["Ferrari", "Italy", 2016],
+            ["Honda", "Japan", 2016],
+            ["Jaguar", "UK", 2016],
+            ["Lamborghini", "Italy", 2016],
+            ];
+    
+            function first(brands, letter){
+                const cn = [];
+                for(let i = 0; i<brands.length; i++){
+                    cn.push(brands)[i][0];
+                }
+                console.log(car);
+    
+                const result = []
+                for (let i = 0; i<cn.length; i++){
+                    if(cn [i] [0].toLowerCase() === letter.toLowerCase()){
+                        result.push(brands[i]);
+                    }
+                    return result;
+                }
+                const search = prompt('');
+                console.log(first(cb, search))
+            }
+    
+            //2. машины үйлвэрлэсэн улсаар хайх
+            
+    
+            //3. нийт хэдэн ширхэг мөр дата байгаа, хэдэн улсын brand байгааг харуулах
+        </script>
+
+
+</body>
+</html>

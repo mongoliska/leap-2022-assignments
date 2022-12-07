@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const social = [ "Facebook", "Google", "Microsoft", "Apple", "IBM", "Oracle", "Amazon" ] 
+        
+        //Sort the array using  method
+        social.sort();
+        console.log(social);
+
+        //Reverse the array using  method
+        console.log ('social:', social);
+        
+        const rvrsd = social.reverse();
+        console.log ('rvrsd:', rvrsd);
+
+        //Remove the first IT company from the array
+        const one = social.shift();
+        console.log(social);
+        console.log(one);
+
+        //Remove the middle IT company or companies from the array
+        social.splice(social.indexOf('Facebook'),1);
+        console.log(social);
+
+        //Remove the last IT company from the array
+        const ppd = social.pop();
+        console.log(ppd);
+        console.log(social);
+
+        //Remove all IT companies
+        social.splice(0,4);
+        console.log(social);
+    </script>
+</body>
+</html>

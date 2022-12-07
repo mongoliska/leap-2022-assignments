@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //In the following shopping cart add, remove, edit items
+        //add 'Meat' in the beginning of your shopping cart if it has not been already added
+        const shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey']
+        shoppingCart.splice(0, 0, 'Meat');
+        console.log(shoppingCart);
+
+        //add Sugar at the end of you shopping cart if it has not been already added
+
+        shoppingCart.push('Sugar');
+        console.log(shoppingCart);
+
+        //remove 'Honey' if you are allergic to honey
+
+        shoppingCart.splice(shoppingCart.indexOf('Honey'),1);
+        console.log(shoppingCart);
+
+        //modify Tea to 'Green Tea'
+        const a = 'Milk, Coffee, Tea, Honey';
+        console.log(a.replace ('Tea', 'Green Tea'));
+
+
+    </script>
+</body>
+</html>

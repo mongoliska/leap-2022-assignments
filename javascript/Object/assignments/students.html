@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1. Ангийнхаа сурагчидын дата үүсгэ. (name: "Гончигсумлай", birthOfYear: 1999, hobby: "морь", single: false)
+        const students = [
+            {isSingle: 'false', firstname: 'Ermuun', lastname: 'Bat', hobby: 'painting', age: '1999'},
+            {isSingle: 'false', firstname: 'Temuulen', lastname: 'Batbold', hobby: 'table tennis', age: '2002'},
+            {isSingle: 'false', firstname: 'Usukhbayar', lastname: 'Bayaraa', hobby: 'basketball', age: '2003'},
+            {isSingle: 'false', firstname: 'Sukhbat', lastname: 'Sukhbat', hobby: 'turnik', age: '2005'},
+            {isSingle: 'false', firstname: 'Ganbold', lastname: 'Boldoo', hobby: 'gaming', age: '1996'},
+            {isSingle: 'false', firstname: 'Amur', lastname: 'Amar', hobby: 'volleyball', age: '1999'},
+            {isSingle: 'false', firstname: 'Dulguun', lastname: 'Dalai', hobby: 'writing', age: '1988'},
+            {isSingle: 'false', firstname: 'Namuunbaigali', lastname: 'Baigalaa', hobby: 'book', age: '1987'},
+            {isSingle: 'false', firstname: 'Baljinnyam', lastname: 'Nyamaa', hobby: 'gym', age: '1964'},
+            {isSingle: 'false', firstname: 'Anand', lastname: 'Daram', hobby: 'box', age: '2009'},
+            {isSingle: 'true', firstname: 'Odbayar', lastname: 'Dorjsuren', hobby: 'sport', age: '1999'},
+            {isSingle: 'true', firstname: 'Narantsetseg', lastname: 'Jargalsaikhan', hobby: 'art', age: '2003'},
+            {isSingle: 'true', firstname: 'Aimergen', lastname: 'Tukhbyetolla', hobby: 'football', age: '1993'},
+            {isSingle: 'false', firstname: 'Tengisbold', lastname: 'Tengis', hobby: 'gaming', age: '2005'},
+            {isSingle: 'false', firstname: 'Indra', lastname: 'Baasanjargal', hobby: 'ballet', age: '2000'},
+            {isSingle: 'false', firstname: 'Binderya', lastname: 'Erdene', hobby: 'coffee', age: '1998'},
+            {isSingle: 'false', firstname: 'Sed-Erdene', lastname: 'Batbayar', hobby: 'cooking', age: '1997'},
+            {isSingle: 'false', firstname: 'Javkhlant', lastname: 'Jargal', hobby: 'music', age: '2008'},
+            {isSingle: 'false', firstname: 'Dalaikhuu', lastname: 'Dalai', hobby: 'cake', age: '1996'},
+        ]
+
+// 2. Сурагчидаас 20 - оос дээш насны сурагчидыг буцаах function бичэх.
+
+function getage(list){
+    let sum = []
+    for(let i = 0; i<students.length; i++){
+        if(students[i].age < 2002){
+            sum.push(students[i])
+        }
+    }
+    return sum;
+}
+console.log(getage(students));
+
+        
+// 3. Сурагчийн насыг бодож олох function бичэх.
+
+
+
+// 4. Сурагчидын ганц бие хүмүүсийг буцаах function бичэх.
+
+    function getrelationship(list,single){
+        let count = 0;
+        for(let i=0; i<list.length; i++){
+            if(list[i].isSingle===single){
+                count++;
+            }
+        }
+        return count;
+    }
+
+    const singlecount = getrelationship(students,'true');
+    console.log (`Niit ${singlecount} single students baina`)
+    </script>
+</body>
+</html>
+
+

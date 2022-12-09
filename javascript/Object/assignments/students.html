@@ -63,6 +63,14 @@ console.log(getage(students));
 
     const singlecount = getrelationship(students,'true');
     console.log (`Niit ${singlecount} single students baina`)
+    
+    //getfirstname
+
+    const result =[];
+    for(let i = 0; i<data.length; i++){
+        result.pusj(data[i]['firstname'][0]);
+    }
+    console.log(result);
     </script>
 </body>
 </html>

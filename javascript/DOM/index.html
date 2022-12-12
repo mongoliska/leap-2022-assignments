@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div id="helloText"></div>
+    <div class="dummy"></div>
+
+    <script>
+        document.getElementById('helloText').innerHTML="Hello World!";
+    </script>
+
+    <script>
+        document.getElementsByClassName('dummy').innerHTML="Hello World!";
+
+        const dummyElements = document.getElementsByClassName("dummy");
+        console.log(dummyElements);
+        for (let i = 0; i<dummyElements.length; i++){
+            items[i].innerHTML = `<b>Hello dummy div ${i + 1}<b>`
+        }
+    </script>
+
+    <div id="demo"></div>
+    <div id="target"></div>
+
+    <p id="test"></p>
+
+    <script>
+        // document.getElementById("demo").innerHTML = "Date : " + Date();
+        
+        const targetEl = document.getElementById("target");
+        targetEl.innerHTML = `<p>Hello World</p>`;
+
+        const pTag = documnet.createElement("p");
+        pTag.innerHTML = "Created by create element";
+        pTag.className = "demo";
+        pTag.id = "demoId";
+        
+
+        document.getElementById("demo").innerHTML = `target`;
+
+        documnet.getElementById("test").style.color = "#ff0000";
+        document.getElementById("test").style.fontSize = "24px";
+
+    </script> -->
+
+    <button id="myBtn">Hello! button</button>
+
+    <script>
+        let myButton = document.querySelector("html")
+        function changeBackgroundColor() {
+            myButton.style = "background-color: green"
+        }
+        myButton.addEventListener("click", getRandomColor)
+
+        function getRandomNumber(min,max){
+            return Math.floor(Math.random()* (max-min)) + min;
+        }
+        function getRandomColor(){
+            const green = getRandomNumber(0,255);
+                const red = getRandomNumber(0,255);
+                const blue = getRandomNumber(0,255)
+                console.log(`rgb(${red},${green},${blue})`);
+                const htmlTag = document.querySelector("html");
+                htmlTag.style.backgroundColor = `rgb(${red},${green},${blue})`;
+        }
+        
+
+        // const myButton = documnet.getElementById("myBtn");
+        // myButton.addEventListener("click", function (){
+        //    htmlTag.style.backgroundColor = getRandomColor ();
+        // });
+    </script>
+
+    <!-- <div class="myBtn">
+        Hello!
+    </div>
+    <script>
+        let myButton = document.getElementById("myBtn");
+            function changeBackgroundColor () {
+            myButton.style = "background-color: green"
+            }
+            myButton.addEventListener("click",changeBackgroundColor());
+
+            let myButtn = document.getElementById("myBtn");
+            function changeBackgroundColor () {
+            myButton.style = "background-color: green"
+            }
+            myButton.addEventListener("click",changeBackgroundColor);
+    </script>
+ -->
+
+</body>
+</html>

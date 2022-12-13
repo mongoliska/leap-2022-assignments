@@ -3,7 +3,7 @@ const TITLE_COUNT = 9;
 const TIMER = 10;
 let MILLISECONDS = 0;
 let SECONDS = TIMER;
-const isGameOver = false;
+let isGameOver = false;
 
 
 const scoreTarget = document.querySelector("#scoreTarget");
@@ -56,12 +56,7 @@ function updateTimer(){
     timerResult += MILLISECONDS;
     timerTarget.innerHTML = timerResult;
 }
-    const countDown = setInterval(updateTimer, 10);
-
-function updateScore(point){
-    score+=point;
-    scoreTarget.innerHTML = score;
-}
+const countDown = setInterval(updateTimer, 10);
 
 function updateScore (point){
     SCORE += point;

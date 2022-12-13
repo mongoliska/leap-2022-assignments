@@ -78,7 +78,7 @@ function getDifferentColor(colors){
     const random = getRandomNumber(0,2);
     const newColors = [...colors];
     let color = colors[random]
-    if(color < 126) {
+    if(color > 126) {
         color -=100;
     } else {
         color +=100

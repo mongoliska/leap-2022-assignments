@@ -1,0 +1,36 @@
+body{
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(#2980d9, #6dd5fa, #fff);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="type"] {
+    width: 50vw;
+    padding: 20px;
+    height: 50px;
+    font-size: 24px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+input[type="checkbox"]{
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+}
+p{
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px 30px;
+    border-radius: 10px;
+    font-size: 48px;
+    color: black;
+}
+
+li{
+    list-style: none;
+}
+

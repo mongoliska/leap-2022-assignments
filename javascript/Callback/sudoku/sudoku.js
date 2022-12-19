@@ -19,7 +19,7 @@ let chosenTd;
 for(let row = 0; row < sudoku.length; row++){
     const cols = sudoku[row];
     const tr = document.createElement('tr');
-    for(let col = 0; col <close.length; col++){
+    for(let col = 0; col <cols.length; col++){
         const td = document.createElement('td');
         td.setAttribute('x', row);
         td.setAttribute('y', col);

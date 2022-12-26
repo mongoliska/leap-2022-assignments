@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        const str1 = 'Hello ';
+        const str2 = 'I\'m';
+        const str3 = `Temuulen`;
+
+        const message = str1+'everyone, \n'+str2+' '+str3;
+        console.log(message);
+        const message1 = `${str1} everyone ${str2} ${str3}`;
+        console.log(message1);
+
+        console.log(str1.length);
+        const uppertext = 'hello i am leap students'.toUpperCase();
+        console.log(uppertext)
+
+        const firstName = 'John';
+        // const fullName = `${firstName} Smith`;
+        // const fullName = firstName+' Smith';
+        // const fullName = firstName.concat(' ','Smith');
+
+
+        const fullString = 'JavaScript is programming language';
+
+        // bichsen indexees hoishih temdegtuudeer shine string 
+        // uusgeh
+        const substr = fullString.substring(13);
+        // ehleh bolon duusah index iig zaaj ogon 
+        // shine string uusgej baigaa
+        const newstr = fullString.substring(13,25);
+
+        // Enhleh index zaaj tuunees hoish heden temdeg avahiig
+        // bichij tuugeer shine string uusgeh
+        const javas = fullString.substr(0,10); 
+
+        console.log(substr);
+        console.log(newstr);
+
+
+
+        const iof = 'This is string'; // 'Th  string'
+        const iof1 = iof.substr(0,iof.indexOf('is'));
+        let rest = iof.substring(iof.indexOf('is')+1);
+        console.log('rest:',rest);
+        const iof2 = rest.substring(iof.indexOf('is'),);
+        console.log('iof2:',iof2);
+        const result = iof1.concat('',iof2);
+        console.log(result);
+
+
+        // const prompt1 = prompt('Too oruulna uu!'); // 1
+        // const prompt2 = prompt('Too oruulna uu!'); // 2
+
+        // console.log(Number(prompt1)+Number(prompt2)); // 3 
+        // Number(prompt1+prompt2); // 12
+
+
+    </script>
+</body>
+</html>

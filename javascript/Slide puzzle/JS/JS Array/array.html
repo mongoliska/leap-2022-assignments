@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const arr = [43, 56, 23, 89, 88, 90, 99, 652, 15, 290, 11];
+        // index tus buriig 1 indexeer hoishluulj baigaa ni 
+        for(let i = arr.length-1; i>=0; i--){
+            arr[i+1] = arr[i];
+        }
+        // anhnii index-g solij baigaa ni 
+        arr[0] = 100; // 100 ni minii duriin too
+        arr[arr.length] = 1;
+
+
+    </script>
+</body>
+</html>

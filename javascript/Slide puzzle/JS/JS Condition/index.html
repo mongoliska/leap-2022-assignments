@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let age = 10;
+
+        if(age<0){
+            console.log('Buruu nas baina!');
+        }else if(age>=2 && age <=5){
+            console.log('Tsetserlegiin nas!');
+        }else if(age>=6 && age <= 18){
+            console.log('surguulin nas!')
+        }else{
+            console.log('Nasand hursen');
+        }
+
+        // Bataagiin nas = 10 , boldoogiin nas 12
+        // Hen ni ah bolohiig hevleh programm
+
+        let bataanas = 10, boldoonas = 10;
+
+        if(bataanas > boldoonas){
+            console.log('bataa ah');
+        }else if(bataanas === boldoonas){
+            console.log('chatsuu');
+        }else{
+            console.log('boldoo ah');
+        }
+
+
+        // a = 10 b = 8 c = 12
+
+        // hamgiin ih toog console.log deer haruulah
+        // c ni ih 12
+
+
+
+        // n = 19
+        // n iig tegsh esvel sondgoig hevlene
+        // sondgoi
+
+        let n = 2;
+        if(n%2===0) {
+            console.log('tegsh too');
+        } else {
+            console.log('sondgoi too');
+        }
+
+        if(n<0) {
+            console.log('sorog too!')
+        } else if(n===0){
+            console.log('saarmag')
+        } else {
+            console.log('eyreg too!');
+        }
+
+        
+
+        // console.log(max);
+
+        
+        // jil = 2022
+        // undur jil ni 
+        // 4 jil tutamd boldog
+        // 100 jil tutamd boldoggui
+        // 400 jil tutamd boldog
+
+        // console.log deer -> undur jil bish
+
+
+        // A,B,C,D,F
+        // TA TEDEES TEDIIN HOOROND DUN AVSAN
+
+        const letter = 'B';
+        switch(letter){
+            case 'A':
+                console.log('90-100');
+                break;
+            case 'B':
+                console.log('80-89');
+                break;
+            case 'C':
+                console.log('70-79');
+                break;
+            case 'D':
+                console.log('60-69');
+                break;
+            case 'F':
+                console.log('0-59');
+                break;
+            default:
+                console.log('invalid grade');
+        }
+
+
+
+
+
+        const year = 2020;
+        if(year%4!==0){
+            console.log('Common year');
+        }else{
+            if(year%100!==0){
+                console.log('LEAP year');
+            }else{
+                if(year%400===0){
+                    console.log('LEAP year');
+                }else{
+                    console.log('Common year!');
+                }
+            }
+        }
+
+
+
+
+
+
+        
+
+        if(year%4===0){
+            if(year%100!==0){
+                if(year%400===0){
+                    console.log('leap year');
+                }else{
+                    console.log('common year!');
+                }
+            }else{
+                console.log('leap year!');
+            }
+        }else{
+            console.log('common year!');
+        }
+
+
+
+
+    </script>
+</body>
+</html>

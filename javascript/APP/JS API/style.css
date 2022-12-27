@@ -1,9 +1,4 @@
-body {
-    margin: 0;
-    background-color: #f0f0f0;
-  }
-  
-  .card-name {
+.card-name {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -27,4 +22,8 @@ body {
   }
   .ratio .card-img-top {
     object-fit: cover;
+  }
+
+  .card {
+    cursor: pointer;
   }

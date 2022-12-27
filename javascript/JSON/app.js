@@ -64,11 +64,81 @@ async function getProducts (limit = 9, skip = 0){
     productsTarget.innerHTML = '';
     const res = await fetch(`https://dummyjson.com/products?limit=${limit}&skip=${skip}`);
     const data = await res.json();
+
+    const products = data.products;
+
+    products =products.filter((product) => {
+        return product
+    })
    
-    for (const product of data.products) {
+    // for (const product of products) {
+    //     productsTarget.innerHTML += getProductCard(product);
+    // }
+    // productsTarget.innerHTML += getPagination(data.total, skip / limit + 1, limit);
+
+    products.forEach(function (product) {
         productsTarget.innerHTML += getProductCard(product);
-    }
-    productsTarget.innerHTML += getPagination(data.total, skip / limit + 1, limit);
+      });
 }
 
+const params = new URL(window.location).searchParams;
+const category = params.get('category');
+const limit = params.get('category');
+
+
 getProducts();
+
+function getMenuItem(menuItem){
+    return `
+    <li class="nav-item">
+        <a class="nav-link ${menuItem.isActive && 'active'}"
+        aria-current="page" 
+        href="${menuItem.link}">
+        ${menuItem.name}</a>
+    </li>`
+}
+
+const menuTarget = document.querySelector('menuTarget')
+
+async function getCategories() {
+    const res = await fetch('https://dummyjson.com/products/categories');
+    const categories = await res.json();
+    return categories.slice(0,5);
+  }
+
+  async function getMenus() {
+    let categories = await getCategories();
+    categories = categories.map((category)=>{
+        return {
+        isActive: false,
+        link: '#'
+        name: category.name,
+        };
+    });
+
+    categories.map((menuCategory) => {
+        menuTarget.innerHTML += getMenuItem(menuCategory);
+    });
+  }
+
+
+
+// // davtalt 1
+// for (let i = 0; i < data.products.length; i++) {
+//     const product = data.products[i];
+//     productsTarget.innerHTML += getProductCard(product);
+//   }
+//   // davtalt 2
+//   for (const product of data.products) {
+//     productsTarget.innerHTML += getProductCard(product);
+//   }
+
+//   // davtalt 3
+//   data.products.forEach(function (product) {
+//     productsTarget.innerHTML += getProductCard(product);
+//   });
+
+//   // davtalt 4
+//   data.products.map((product) => {
+//     productsTarget.innerHTML += getProductCard(product);
+//   });

@@ -7,6 +7,8 @@ export default function Table () {
         <table className="table table-bordered table-hover">
           <Thead/>
           <Tbody/>
+          <Tbody/>
+          <Tbody/>
         </table>
         </>
     )

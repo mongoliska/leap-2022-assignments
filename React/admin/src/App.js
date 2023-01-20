@@ -1,20 +1,24 @@
 import './styles/bootstrap.min.css';
 import './styles/styles.css';
 import Navbar from './components/Navbar';
-import Title from './components/Title/Title';
-import Table from './components/Table/Table';
-import Select from 'react-select';
-import DynamicModal from './components/Utils/DynamicModal';
 import { useState } from 'react';
-import PostCreate from './components/Blogs/PostCreate';
 
+import { Routes, Route} from 'react-router-dom';
+import Home from './pages/Home';
+import Articles from './pages/Articles';
+import Signin from './pages/Signin'
+import SignInError from './pages/SignInError';
+import Register from './pages/Register';
 
 
 function App() {
 
+  const [signedIn, setSignedIn]=useState(false);
+
   const [show, setShow] = useState(false);
   
   const [count, setCount] = useState(0);
+  const [menuShow,setMenuShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const handleSave = () => setShow(false);
@@ -25,22 +29,31 @@ function App() {
     { value: 'vanilla', label: 'Vanilla' },
   ];
 
+  if(!signedIn) {
+    return (
+      <>
+      <Routes>
+        <Route path="/signin" element={<Signin />} /> 
+        <Route path="/register" element={<Register />} /> 
+        <Route path='*' element={<SignInError />} /> 
+      </Routes>
+      </>
+    )
+  }
 
   return (
     <>
-      <Navbar />
-      <div className="container-sm body-container">
-      <Select
-        value={[]}
-        options={options}/>
-      <Title title={'k'} handleShow={handleShow} />
-      <DynamicModal 
-        show={show} 
-        handleClose={handleClose} 
-        handleSave={handleSave} 
-        title="Create post"
-        content={<PostCreate />}/>
-      <Table/>
+      <Navbar onToggle={() => setMenuShow(!menuShow)}/>
+
+      <div className='main-wrapper'>
+        <div className={`off-menu bg-dark ${menuShow && 'show'}`}></div>
+        <div className='off-menu-sibling'>
+      <Routes>
+        <Route path ="/"element={<Home />}/>
+        <Route path ="/articles" element={<Articles handleShow={handleShow} handleSave={handleSave} handleClose={handleClose} show={show} />}/>
+      </Routes>
+
+        </div>
       </div>
     </>
   );

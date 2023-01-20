@@ -5,7 +5,7 @@ import NavbarWrapper from './Navbar/NavbarWrapper';
 export default function Navbar() {
   const menuItems = [
     { label: 'Home', link: '#' },
-    { label: 'Articles', link: '#' },
+    { label: 'Articles', link: '/articles' },
     { label: 'Feedback', link: '#' },
     { label: 'Files', link: '#' },
   ];

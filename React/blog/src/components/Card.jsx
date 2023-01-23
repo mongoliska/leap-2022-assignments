@@ -1,10 +1,12 @@
-export default function Card (article) {
-    return (
-        <div className="card">
-              <div className="card-img">
-                <img src={image} alt={title}/>
-              </div>
-              <div className="card-body">С.Мойлтмаа: Ажилтандаа анхаарал хандуулж </div>
-            </div>
-    )
+import Page from "./Page";
+
+export default function Card({ image, title }) {
+  return (
+    <div className="card">
+      <div className="card-img">
+        <img src={image} onClick={<Page />} alt={title} />
+      </div>
+      <div className="card-body">{title}</div>
+    </div>
+  );
 }

@@ -1,13 +1,16 @@
-import React from 'react';
-import Header from './components/Header'
+import Header from './components/Header';
+import ChatScreen from './pages/ChatScreen';
 import Home from './pages/Home';
 
-
 function App() {
-  <>
-  <Header />
-    <Home />
-  </>
+  return (
+    <>
+      <Header />
+      <Home />
+      <ChatScreen />
+      {/* <Footer /> */}
+    </>
+  );
 }
 
 export default App;

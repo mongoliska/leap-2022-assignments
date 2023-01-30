@@ -1,28 +1,38 @@
-const { request } = require('express');
+// const { request } = require('express');
 const express = require('express');
 const cors = require("cors")
+const fs = require("fs")
 const app = express();
 app.use(cors())
 const port = 8000;
 
+
 const bodyParser = require('body-parser')
 const jsonParser = bodyParser.json();
 
-let categories = [
-    {
-        id: 1,
-        name: 'Menu',
-    },
-    {
-        id: 2,
-        name: 'Happy hour',
-    },
-    {
-        id: 6,
-        name: 'Combo',
-    },
-]
+let products = JSON.parse(fs.readFileSync('MOCK_DATA.json', "utf-8"));
 
+app.get('/products', (req, res) => {
+    let {pageSize, page, priceTo, priceForm, q } = req.query;
+    pageSize = Number(pageSize) || 10;
+    page = Number(page) || 1;
+    let start, end;
+
+    start = (page - 1) * pageSize;
+    end = page * pageSize;
+
+    const items = products.slice(start, end);
+
+    res.json({
+        total: products.length,
+        totalPages: Math.ceil(products.length / pageSize),
+        page,
+        pageSize,
+        items,
+    });
+});
+
+const categories = JSON.parse(fs.readFileSync('./categoryData.json','utf-8'));
 let nextCatId = categories.length
 
 const articles = [

@@ -8,9 +8,9 @@ export default function Header() {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    axios.get('https://demo-api-one.vercel.app/api/categories')
+    axios.get('http://localhost:8000/categories')
       .then((res) => {
-        setCategories(res.data.body);
+        setCategories(res.data);
       });
       
         
@@ -43,7 +43,7 @@ export default function Header() {
               </li>
               {categories.map((item) => (
                 <li key={item.id}>
-                  <a href="/">{item.name}</a>
+                  <a href={`/categories/${item.id}`} >{item.name}</a>
                 </li>
               ))}
             </ul>

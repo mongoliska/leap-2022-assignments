@@ -6,10 +6,11 @@ export default function Article () {
     const { id } = useParams();
 
     const [article, setArticle] = useState(null);
-
+    console.log(id);
+console.log(id)
     useEffect(() => {
-        axios.get(`https://demo-api-one.vercel.app/api/articles/${id}`).then((res) => {
-            setArticle(res.data.body);
+        axios.get(`https://localhost:8000/article/${id}`).then((res) => {
+            setArticle(res.data);
         })
     }, []);
     

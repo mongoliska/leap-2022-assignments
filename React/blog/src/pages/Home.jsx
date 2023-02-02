@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react';
 import Card from '../components/Card';
 // import axios from 'axios';
 // import { Link } from 'react-router-dom';
 
 export default function Home() {
+  const articles =
   [
     {
       image: 'https://www.justonecookbook.com/wp-content/uploads/2022/12/California-Roll-6147-II.jpg',

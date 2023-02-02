@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { IoSearchOutline } from 'react-icons/io5';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 export default function Header() {
   const count = 10;
@@ -39,13 +40,30 @@ export default function Header() {
           <nav>
             <ul>
               <li>
-                <a href="/">Home</a>
+                <Link to={'/'}>Нүүр</Link>
               </li>
-              {categories.map((item) => (
-                <li key={item.id}>
-                  <a href={`/categories/${item.id}`} >{item.name}</a>
-                </li>
-              ))}
+              <li>
+
+              </li>
+                {categories.map((item) => {
+                  if(item.name === 'Products'){
+                    return (
+                      <Link to={'/products'}>
+                        <li key={item.id}>
+                          <a >{item.name}</a>
+                        </li>
+                      </Link>
+                    );
+                  }else{
+                    return (
+                      <Link to="">
+                        <li key={item.id}>
+                        <a >{item.name}</a>
+                        </li>
+                      </Link>
+                    )
+                  }
+                })}
             </ul>
           </nav>
         </div>

@@ -4,31 +4,72 @@ import dayjs from 'dayjs';
 import currencyFormatter from '../utils/currencyFormatter'
 
 import relateTime from 'dayjs/plugin/relativeTime';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 dayjs.extend(relateTime);
 
 export default function Products () {
+    const [isReady, setIsReady] = useState(false);
+
     const [page, setPage] = useState(null);
     const [currentPage, setCurrentPage] = useState(1);
-    const [pageSize, setPageSize] = useState(12);
+    const [pageSize, setPageSize] = useState(10);
+
+    const [searchQuery, setSearchQuery] = useState('');
+
+    const [locationQuery, setLocationQuery] = useState('');
 
     const location = useLocation();
+    const navigate = useNavigate();
+    
+    useEffect(() => {
+        const newQuery = new URLSearchParams();
+        newQuery.set('pageSize', pageSize);
+        newQuery.set('page', currentPage);
+        if (searchQuery !== '') {
+            newQuery.set('q', searchQuery);
+        }
+        setLocationQuery(newQuery, toString());
+    }, [pageSize, currentPage, searchQuery]);
 
     useEffect(() => {
-        axios.get(`http:localhost:8000/products?pageSize=${pageSize}&page=${currentPage}`).then((res) => {
-            setPage(res.data);
-        });
-    }, [currentPage, pageSize]);
+        navigate(`/products?${locationQuery}`);
+    }, [locationQuery]);
+
+    useEffect(() => {
+        if (isReady) {
+            getResults();
+        }
+    }, [isReady]);
 
     useEffect(() => {
         const searchParams = new URLSearchParams(location.search);
         if(searchParams.has('page')) {
             setCurrentPage(Number(searchParams.get('page')));
         }
-        if(searchParams.has('page')) {
+        if(searchParams.has('pageSize')) {
             setPageSize(Number(searchParams.get('pageSize')));
         }
+        if (searchParams.has('q')){
+            setSearchQuery(searchParams.get('q'));
+        }
+        if (isReady) {
+            getResults();
+        } else {
+            setIsReady(true);
+        }
     }, [location]);
+
+    const getResults = () => {
+        const urlParams = new URLSearchParams();
+        urlParams.set('pageSize', pageSize);
+        urlParams.set('page', currentPage);
+        if(searchQuery !== ''){
+            urlParams.set('q', searchQuery);
+        }
+        axios.get(`http://localhost:8000/products?${urlParams.toString()}`).then((res) => {
+            setPage(res.data);
+        });
+    };
 
     if (!page) {
         return (
@@ -92,8 +133,40 @@ export default function Products () {
     return (
         <main>
             <div className="container">
+            <div className="d-flex justify-content-end mb-4" >
+                <label className='me-4'>
+                    Нэрээр хайх
+                   <input 
+                   type="text"
+                   className='forn=control'
+                   placeholder='Барааны нэр...'
+                   value={searchQuery}
+                   onChange={(e) => {
+                    setSearchQuery(e.target.value);
+                    setCurrentPage(1);
+                   }}
+                   />
+                </label>
+                <label>
+                    Хуудаслалт
+                    <select
+                    className='form-control'
+                    onChange={(e) => {
+                        setCurrentPage(1);
+                        setPageSize(e.target.value);
+                    }}
+                    value={pageSize}
+                    >
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                    </select>
+                </label>
+            </div>
                 <div className="row gy-4">
-                    {page.items.map((product) => {
+                    {page?.items?.map((product) => {
                         return (
                             <div className="col-sm-3" key={product.id}>
                                 <div className="product-card">
@@ -112,17 +185,17 @@ export default function Products () {
                 </div>
                 <div>
                     <nav aria-label="..." className="my-4">
-                        <ul>
-                            <li className={`page-item ${page.page === 1 && 'disabled'}`}>
-                                <a href="#" className="page-link">
-                                    Previous
-                                </a>
+                        <ul className='pagination pagination-lg justify-content-center'>
+                            <li className={`page-item ${currentPage === 1 && 'disabled'}`}>
+                                <Link to={`/products?pageSize=${pageSize}&page=${currentPage - 1}`} className="page-link">
+                                    previous
+                                </Link>
                             </li>
                             {getPaginations()}
-                            <li>
-                                <a className="page-link" href="#">
-                                    Next
-                                </a>
+                            <li className={`page-item ${currentPage === page.totalPages && 'disabled'}`}>
+                            <Link to={`/products?pageSize=${pageSize}&page=${currentPage + 1}`} className="page-link">
+                                next
+                            </Link>
                             </li>
                         </ul>
                     </nav>
